@@ -27,4 +27,7 @@ from .import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.HOME, name='home'),
+    path('doctor/', include('doctor.urls')),
+    path('hospital/', include('hospital.urls')),
+    path('specialty/', include('specialty.urls')),
 ]
