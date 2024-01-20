@@ -27,4 +27,5 @@ from .import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.HOME, name='home'),
-]
+    path('hospital/', views.HOSPITAL, name='hospital'),
+]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
