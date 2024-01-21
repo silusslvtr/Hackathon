@@ -26,8 +26,21 @@ SECRET_KEY = 'django-insecure-xa%5t!n(g%v9h73u@)fu+u4c_ntln!0zc$sxmqd^s!b#41p^_i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '7c19-2400-1a00-b080-9bb8-669e-f7c9-8451-7593.ngrok-free.app',
+    'localhost',
+    'corsheaders',
+]
+CORS_ALLOWED_ORIGINS = [
+    "https://7c19-2400-1a00-b080-9bb8-669e-f7c9-8451-7593.ngrok-free.app",
+]
+CORS_ALLOW_ALL_ORIGINS = True
 
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:8000",  # Your local development URL
+    "https://7c19-2400-1a00-b080-9bb8-669e-f7c9-8451-7593.ngrok-free.app",
+    # Add other origins as needed
+]
 
 # Application definition
 
@@ -45,6 +58,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
